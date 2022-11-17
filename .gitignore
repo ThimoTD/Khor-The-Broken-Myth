@@ -70,3 +70,9 @@ crashlytics-build.properties
 UserSettings/
 
 node/node_modules
+
+Library/
+
+Temp/
+
+Packages/
