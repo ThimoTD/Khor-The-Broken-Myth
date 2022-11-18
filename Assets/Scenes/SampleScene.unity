@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 180787760}
   - component: {fileID: 180787759}
   - component: {fileID: 180787762}
-  - component: {fileID: 180787763}
+  - component: {fileID: 180787764}
   m_Layer: 0
   m_Name: PlayerHead
   m_TagString: Untagged
@@ -276,7 +276,7 @@ CircleCollider2D:
   m_Offset: {x: -2.6, y: 2.66}
   serializedVersion: 2
   m_Radius: 3.88
---- !u!114 &180787763
+--- !u!114 &180787764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,18 +285,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 180787758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46efc3d7b14d5b445909b1ef06ee1070, type: 3}
+  m_Script: {fileID: 11500000, guid: 2742c00c4f9101c40b9f7d0cfd970069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  jumpingPower: 8
-  facingRight: 0
-  maxSpeed: 20
-  rb: {fileID: 180787759}
-  groundCheck: {fileID: 83236139}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
+  maxSpeed: 22
+  jumpingPower: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +302,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -324,18 +317,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -471,7 +452,7 @@ Transform:
   m_GameObject: {fileID: 1574765376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -57.59473, y: -3, z: 90}
-  m_LocalScale: {x: 500, y: 10, z: 1}
+  m_LocalScale: {x: 2280.79, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
