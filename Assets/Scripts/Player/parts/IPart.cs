@@ -8,7 +8,7 @@ public interface IPart
 
     public EPart bodyPart { get;}
 
-    public IEnumerable<EPart> parts { get; set; }
+    public IEnumerable<EPart> parts { get;}
 
     public Vector3 position { get; set; }
 

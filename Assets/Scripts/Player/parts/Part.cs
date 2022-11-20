@@ -9,5 +9,9 @@ public class Part : IPart
     public EPart bodyPart { get; set; }
 
     public IEnumerable<EPart> parts => Parts;
-    private List<EPart> Parts;
+    private readonly List<EPart> Parts;
+
+    public Part()
+    {
+    }
 }

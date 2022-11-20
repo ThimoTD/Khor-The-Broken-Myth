@@ -6,5 +6,5 @@ using UnityEngine.Profiling;
 [System.Serializable]
 public class PlayerParts
 {
-    List<IPart> parts ;
+   public List<IPart> parts = new List<IPart>();
 }
