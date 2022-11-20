@@ -6,6 +6,5 @@ using UnityEngine.Profiling;
 [System.Serializable]
 public class PlayerParts
 {
-    IEnumerable<IPart> parts;
-    
+    List<IPart> parts ;
 }
