@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     private static PlayerManager instance;
 
     //delegate for update per frame
+    private PlayerParts[] body;
     public delegate void FrameUpdate();
     public FrameUpdate frameUpdate;
 

@@ -61,7 +61,7 @@ public class HeadMovement
         //if not rolling in idle 
         if(horizontal != 0)
         {
-            MaxSpeed();
+            //MaxSpeed();
         }
 
     }
