@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using Unity.Profiling;
 using UnityEngine;
 using static PlayerManager;
@@ -53,17 +54,12 @@ public class HeadMovement
             inputSpeed = 0;
         }
 
-        //thimo ik heb velocity veranderd naar addforce zodat het draaien er beter uitziet
-        //zorg ervoor dat je sneller kan stoppen en starten want de snelheid is best fucked up
         inputSpeed = Mathf.Lerp(inputSpeed, horizontal * speed, 0.03f);
-        //rb.velocity = new Vector2((inputSpeed * 250) * Time.deltaTime, rb.velocity.y);
-        rb.AddForce(new Vector2((inputSpeed * 250) * Time.deltaTime, rb.velocity.y), ForceMode2D.Force);
-        //if not rolling in idle 
-        if(horizontal != 0)
-        {
-            //MaxSpeed();
-        }
+        float F = inputSpeed;
+        float v = Mathf.Clamp(((F / rb.mass) * (Time.fixedDeltaTime * 300)) - rb.velocity.x, -Mathf.Infinity, Mathf.Infinity);
 
+        Debug.Log(v);
+        rb.AddForce(new Vector2(v, rb.velocity.y), ForceMode2D.Force);
     }
     // \\ // \\ // \\ //
 
