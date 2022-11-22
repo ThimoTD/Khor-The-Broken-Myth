@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         instance = this;
-        headMovement = new HeadMovement(speed, maxSpeed, jumpingPower, instance);
+        headMovement = new HeadMovement(speed, instance);
     }
 
     private void Update() => frameUpdate();
