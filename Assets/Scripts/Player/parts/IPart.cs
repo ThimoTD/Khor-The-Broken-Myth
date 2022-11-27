@@ -6,11 +6,11 @@ public interface IPart
 {
     public EPartState state { get; set; }
 
-    public EPart bodyPart { get;}
+    public EPart bodyPart { get; }
 
-    public IEnumerable<EPart> parts { get;}
+    public Vector2 localPosition { get; set; }
 
-    public Vector3 position { get; set; }
+    public IPartMovement partMovement { get; }
 
 
 }

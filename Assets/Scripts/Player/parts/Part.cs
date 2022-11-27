@@ -5,11 +5,12 @@ using UnityEngine;
 public class Part : IPart
 {
     public EPartState state { get; set; }
-    public Vector3 position { get; set; }
-    public EPart bodyPart { get; set; }
+    public Vector2 localPosition { get; set; }
+    public EPart bodyPart { get;}
 
-    public IEnumerable<EPart> parts => Parts;
-    private readonly List<EPart> Parts;
+    public IPartMovement partMovement { get; }
+
+    private GameObject part;
 
     public Part()
     {

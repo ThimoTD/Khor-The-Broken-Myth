@@ -5,7 +5,7 @@ using Unity.Profiling;
 using UnityEngine;
 using static PlayerManager;
 
-public class HeadMovement
+public class HeadMovement : IPartMovement
 {
     private float horizontal;
     private float inputSpeed;
@@ -17,6 +17,7 @@ public class HeadMovement
     private Transform groundCheck;
     private LayerMask groundLayer;
 
+    // // \\ // \\ // \\
     public HeadMovement(float speed, PlayerManager pm)
     {
         this.speed = speed;
@@ -27,6 +28,7 @@ public class HeadMovement
         groundLayer = LayerMask.GetMask("Ground");
 
     }
+    // \\ // \\ // \\ //
 
     //per frame
     // // \\ // \\ // \\
@@ -43,20 +45,34 @@ public class HeadMovement
         }
 
         inputSpeed = Mathf.Lerp(inputSpeed, horizontal * speed, 0.03f);
-        float F = inputSpeed;
-        float v = Mathf.Clamp(((F / rb.mass) * (Time.fixedDeltaTime * 300)) - rb.velocity.x, -Mathf.Infinity, Mathf.Infinity);
-        //float vv = 
+        float fi = inputSpeed; // input force
+        float F = Mathf.Clamp(((fi / rb.mass) * (Time.fixedDeltaTime * 300)) - rb.velocity.x, -Mathf.Infinity, Mathf.Infinity); // Force
 
-        Debug.Log(v);
-        rb.AddForce(new Vector2(v, rb.velocity.y), ForceMode2D.Force);
+        rb.AddForce(new Vector2(F, rb.velocity.y), ForceMode2D.Force);
+        Vt();
     }
     // \\ // \\ // \\ //
 
+
+    private bool Vt()
+    {
+        if(rb.velocity.y < -250)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -250);
+            return true;
+        }
+        return false;
+    }
     // // \\ // \\ // \\
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
     // \\ // \\ // \\ //
+
+    public void UpdateConfig()
+    {
+        throw new System.NotImplementedException();
+    }
 }
 
